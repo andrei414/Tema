@@ -19,7 +19,7 @@ pipeline {
 		}
 		stage ('Starting Sonar') {
 			steps{
-		    	build job: 'job/pipelines/job/test/'
+		    	build job: 'pipelines/job/test/'
 			}
 		}
 	}

@@ -35,25 +35,39 @@
             </plugin>
 
             <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>buildnumber-maven-plugin</artifactId>
+              <version>1.4</version>
+              <executions>
+                <execution>
+                  <id>buildnumber</id>
+                  <phase>validate</phase>
+                  <goals>
+                    <goal>create</goal>
+                  </goals>
+                </execution>
+              </executions>
+              <configuration>
+                <format>{1,number}</format>
+                <items>
+                  <item>buildNumber</item>
+                </items>                    
+                <doCheck>false</doCheck>
+                <doUpdate>false</doUpdate>
+                <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>   
+              </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
                     <checkModificationExclude>pom.xml</checkModificationExclude>
                     <checkModificationExclude>buildNumber.properties</checkModificationExclude>
+                    <checkModificationExclude>dependency-reduced-pom.xml</checkModificationExclude>
                 </configuration>
             </plugin>
-            <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-release-plugin</artifactId>
-               <version>2.5.3</version>
-               <configuration>
-                  <checkModificationExcludes>
-                     <checkModificationExclude>dependency-reduced-pom.xml</checkModificationExclude>
-                  </checkModificationExcludes>
-               </configuration>
-            </plugin>
-
         </plugins>
 
         <finalName>${project.artifactId}-${project.version}</finalName>

@@ -48,6 +48,7 @@
                 <groupId>org.openclover</groupId>
                 <artifactId>clover</artifactId>
                 <version>4.2.0</version>
+                <packaging>maven-plugin</packaging>
                 <executions>
                     <execution>
                         <phase>verify</phase>

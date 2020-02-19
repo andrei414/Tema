@@ -32,7 +32,7 @@ public class BanksControllerTest extends TestCase {
     BanksService banksService;
 
     @Before
-    public void setup() throws Exception {
+    public void setUp() throws Exception {
         this.mockMvc = MockMvcBuilders
                 .webAppContextSetup(webApplicationContext).build();
     }

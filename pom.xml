@@ -44,16 +44,18 @@
                 </configuration>
             </plugin>
 
-           <plugin>
+            <plugin>
               <groupId>org.openclover</groupId>
               <artifactId>clover-maven-plugin</artifactId>
               <version>4.2.0</version>
               <configuration>
+                <targetPercentage>50%</targetPercentage>
               </configuration>
               <executions>
                 <execution>
+                  <phase>verify</phase>
                   <goals>
-                    <goal>instrument</goal>
+                    <goal>check</goal>
                   </goals>
                 </execution>
               </executions>

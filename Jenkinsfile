@@ -6,6 +6,11 @@ pipeline {
 
 
 	stages {
+				stage ('Starting Sonar') {
+			steps{
+		    	build job: 'test'
+			}
+		}
 		stage('Build'){
 			steps {
 				sh "mvn clean install"
@@ -19,7 +24,7 @@ pipeline {
 		}
 		stage ('Starting Sonar') {
 			steps{
-		    	build job: 'pipelines/job/test/'
+		    	build job: 'test'
 			}
 		}
 	}

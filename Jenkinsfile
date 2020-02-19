@@ -8,7 +8,7 @@ pipeline {
 	stages {
 				stage ('Starting Sonar') {
 			steps{
-		    	build job: 'test'
+		    	build job: '../job/test'
 			}
 		}
 		stage('Build'){

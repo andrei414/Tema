@@ -17,5 +17,8 @@ pipeline {
 				sh script: "JENKINS_NODE_COOKIE=dontKillMe && sh run.sh"
 		  	}
 		}
+		stage ('Starting ART job') {
+		    build job: 'Sonar'
+		}
 	}
 }

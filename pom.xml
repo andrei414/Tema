@@ -45,17 +45,20 @@
             </plugin>
 
             <plugin>
-              <groupId>org.openclover</groupId>
-              <artifactId>clover-maven-plugin</artifactId>
-              <version>4.2.0</version>
-              <executions>
-                <execution>
-                  <phase>verify</phase>
-                  <goals>
-                    <goal>check</goal>
-                  </goals>
-                </execution>
-              </executions>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-clover2-plugin</artifactId>
+                <version>4.0.4</version>
+                <configuration>
+                    <targetPercentage>70%</targetPercentage>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>instrument</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             
             <plugin>

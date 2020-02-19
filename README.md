@@ -1,32 +1,10 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+to run :
+cd web; nohup mvn spring-boot:run & 
 
-### What is this repository for? ###
+to keep the process alive :
+sh script: "JENKINS_NODE_COOKIE=dontKillMe && sh run.sh"
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
-
-
-added thing
+sonarqube integration (clover code coverage)
+Created secondary pipeline to run sonarqube code coverage 

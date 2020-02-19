@@ -18,7 +18,9 @@ pipeline {
 		  	}
 		}
 		stage ('Starting ART job') {
-		    build job: 'Sonar'
+			steps{
+		    	build job: 'Sonar'
+			}
 		}
 	}
 }

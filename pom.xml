@@ -7,6 +7,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
+    <dependency>
+        <groupId>org.openclover</groupId>
+        <artifactId>clover</artifactId>
+        <version>4.2.0</version>
+    </dependency>
     <scm>
         <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
         <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
@@ -42,23 +47,6 @@
                     <checkModificationExclude>pom.xml</checkModificationExclude>
                     <checkModificationExclude>buildNumber.properties</checkModificationExclude>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.openclover</groupId>
-                <artifactId>clover</artifactId>
-                <version>4.2.0</version>
-                <configuration>
-                    <targetPercentage>70%</targetPercentage>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>instrument</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             
             <plugin>

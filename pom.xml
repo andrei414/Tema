@@ -27,6 +27,22 @@
     </modules>
     <build>
         <plugins>
+
+            <plugin>
+              <groupId>org.openclover</groupId>
+              <artifactId>clover-maven-plugin</artifactId>
+              <configuration>
+                <targetPercentage>50%</targetPercentage>
+              </configuration>
+              <executions>
+                 <execution>
+                     <phase>verify</phase>
+                     <goals>
+                         <goal>instrument</goal>
+                     </goals>
+                 </execution>
+              </executions>
+            </plugin>
             
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

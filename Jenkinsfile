@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage('Build'){
 			steps {
-				sh "mvn clean install"
+				sh "mvn clean verify"
 			}
 		}
 
@@ -16,6 +16,11 @@ pipeline {
 			steps{
 				sh script: "JENKINS_NODE_COOKIE=dontKillMe && sh run.sh"
 		  	}
+		}
+		stage ('Starting Sonar') {
+			steps{
+		    	build job: 'Sonar'
+			}
 		}
 	}
 }

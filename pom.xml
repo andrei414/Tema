@@ -27,7 +27,29 @@
     </modules>
     <build>
         <plugins>
+
+            <plugin>
+              <groupId>org.openclover</groupId>
+              <artifactId>clover-maven-plugin</artifactId>
+              <version>4.2.0</version>
+              <executions>
+                 <execution>
+                     <phase>verify</phase>
+                     <goals>
+                         <goal>instrument</goal>
+                     </goals>
+                 </execution>
+              </executions>
+            </plugin>
             
+            <plugin>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>2.19.1</version>
+              <configuration>
+                <argLine>${surefireArgLine}</argLine>
+              </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>

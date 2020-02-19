@@ -45,9 +45,9 @@
             </plugin>
 
             <plugin>
-                <groupId>com.atlassian.maven.plugins</groupId>
-                <artifactId>maven-clover2-plugin</artifactId>
-                <version>4.0.4</version>
+                <groupId>org.openclover</groupId>
+                <artifactId>clover</artifactId>
+                <version>4.2.0</version>
                 <configuration>
                     <targetPercentage>70%</targetPercentage>
                 </configuration>

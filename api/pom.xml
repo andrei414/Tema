@@ -60,6 +60,14 @@
                     <mainClass>com.apiDemo.ApiApplication</mainClass>
                 </configuration>
             </plugin>
+            <plugin>
+            	<groupId>com.atlassian.maven.plugin</groupId>
+            	<artifactId>maven-clover2-plugin</artifactId>
+            	<version>4.0.2</version>
+            	<configuration>
+            		<instrumentLambda>block</instrumentLambda>
+            	</configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

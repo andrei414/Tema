@@ -25,13 +25,13 @@ pipeline {
     	}
 		stage ('Starting Sonar') {
 			steps{
-		    	build job: 'Sonar'
+		    	build job: 'SonarTestEnv'
 			}
 		}
-		/*stage('Release') {
+		stage('Release') {
 			steps{
         		sh script: 'mvn clean -s settings.xml --batch-mode release:clean release:prepare release:perform'
     		}
-    	}*/    	
+    	}    	
 	}
 }

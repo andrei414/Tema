@@ -23,20 +23,16 @@ pipeline {
         		sh script: 'git config --global user.email "andreiirimiagg@gmail.com"'
         	}	
     	}
-		stage ('Starting Sonar') {
-			steps{
-		    	build job: 'SonarTestEnv'
-			}
-		}
-		stage ('prepare for release') {
-			steps{
-				sh './commit.sh'
-			}
-		}
+
 		stage('Release') {
 			steps{
         		sh script: 'mvn clean -s settings.xml release:clean release:prepare release:branch -DbranchName=release-branch'
     		}
-    	}    	
+    	}
+    	stage ('Starting Sonar') {
+			steps{
+		    	build job: 'SonarTestEnv'
+			}
+		}    	
 	}
 }

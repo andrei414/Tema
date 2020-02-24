@@ -8,6 +8,7 @@ pipeline {
 	stages {
 		stage('Build'){
 			steps {
+				cleanWs()
 				sh "mvn clean verify"
 			}
 		}

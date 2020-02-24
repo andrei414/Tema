@@ -57,7 +57,9 @@
               <configuration>
                   <releaseProfiles>release</releaseProfiles>
                   <goals>deploy</goals>
+                  <!--
                   <autoVersionSubmodules>true</autoVersionSubmodules>
+                  -->
               </configuration>
             </plugin>
            

@@ -26,7 +26,7 @@ pipeline {
 
 		stage('Release') {
 			steps{
-        		sh script: 'mvn clean -s settings.xml release:clean '
+        		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare'
     		}
     	}
     	stage ('Starting Sonar') {

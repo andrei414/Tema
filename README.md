@@ -30,4 +30,7 @@ nexus name : admin
 nexus pass : admin123
 
 
+remove all remote tags :     			sh script: 'git tag -l | xargs -n 1 git push --delete origin'
+
+
 

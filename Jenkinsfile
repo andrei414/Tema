@@ -8,6 +8,7 @@ pipeline {
 	stages {
 		stage('Build'){
 			steps {
+				cleanWs()
 				sh "mvn clean verify"
 			}
 		}
@@ -27,7 +28,7 @@ pipeline {
 		stage('Release') {
 			steps{
         		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare'
-        		
+
     		}
     	}
     	stage ('Starting Sonar') {

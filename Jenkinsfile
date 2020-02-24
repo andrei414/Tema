@@ -30,7 +30,7 @@ pipeline {
 		}
 		stage('Release') {
 			steps{
-        		sh script: 'mvn clean -s settings.xml release:clean release:prepare release:perform'
+        		sh script: 'mvn clean -s settings.xml release:clean release:prepare release:branch -DbranchName=release-branch'
     		}
     	}    	
 	}

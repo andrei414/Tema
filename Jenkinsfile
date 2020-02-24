@@ -26,6 +26,7 @@ pipeline {
 
     	stage('Delete tags') {
     		steps{
+    			sh script: 'git tag -l | xargs -n 1 git push --delete origin'
         		sh script: 'git tag | xargs git tag -d'
     		}
     	}

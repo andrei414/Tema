@@ -26,6 +26,7 @@ pipeline {
 
 		stage('Release') {
 			steps{
+				sh 'ssh-keygen -R hostname'
         		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare'
 
     		}

@@ -24,10 +24,14 @@ pipeline {
         	}	
     	}
 
+    	stage('Delete tags') {
+    		steps{
+        		sh script: 'git tag | xargs git tag -d'
+    		}
+    	}
 		stage('Release') {
 			steps{
-        		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare release:branch -DbranchName=release-branch1'
-
+        		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare release:branch -DbranchName=release-branch'
     		}
     	}
     	stage ('Starting Sonar') {

@@ -5,6 +5,15 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.2.4.RELEASE</version>
     </parent>
+    <dependencyManagement>
+            <dependencies>
+                    <dependency>
+                            <groupId>webDemo</groupId>
+                            <artifactId>webDemo</artifactId>
+                            <version>1.2.4.RELEASE</version>
+                    </dependency>
+            </dependencies>
+    </dependencyManagement>
     <groupId>webDemo</groupId>
     <artifactId>webDemo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -16,10 +25,10 @@
         <java.version>1.8</java.version>
     </properties>
     <scm>
-        <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
-        <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
+        <connection>scm:git:git@github.com:andrei414/TemaDevOps.git</connection>
+        <developerConnection>scm:git:git@github.com:andrei414/TemaDevOps.git</developerConnection>
         <tag>HEAD</tag>
-        <url>git@github.com:andrei414/Tema.git</url>
+        <url>git@github.com:andrei414/TemaDevOps.git</url>
     </scm>
     <modules>
         <module>api</module>
@@ -27,6 +36,23 @@
     </modules>
     <build>
         <plugins>
+            <plugin>
+              <artifactId>maven-release-plugin</artifactId>
+              <version>2.5</version>
+              <configuration>
+                  <releaseProfiles>release</releaseProfiles>
+                  <goals>deploy</goals>
+                  <!--
+                  <autoVersionSubmodules>true</autoVersionSubmodules>
+                  -->
+              </configuration>
+            </plugin>
+           
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
 
             <plugin>
               <groupId>org.openclover</groupId>
@@ -40,20 +66,6 @@
                      </goals>
                  </execution>
               </executions>
-            </plugin>
-            
-            <plugin>
-              <artifactId>maven-surefire-plugin</artifactId>
-              <version>2.19.1</version>
-              <configuration>
-                <argLine>${surefireArgLine}</argLine>
-              </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.7</version>
             </plugin>
 
             <plugin>

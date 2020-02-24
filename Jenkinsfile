@@ -26,7 +26,8 @@ pipeline {
 
 		stage('Release') {
 			steps{
-				sh 'ssh-keygen -R hostname'
+				sh script: 'git config --global user.name "andrei414"'
+        		sh script: 'git config --global user.email "andreiirimiagg@gmail.com"'
         		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare'
 
     		}

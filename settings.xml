@@ -5,6 +5,11 @@
 
     <mirrors>
        <mirror>
+         <id>nexus-public</id>
+         <mirrorOf>*</mirrorOf>
+         <url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+       </mirror>
+       <mirror>
          <id>nexus-snapshots</id>
          <mirrorOf>*</mirrorOf>
          <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
@@ -17,6 +22,11 @@
     </mirrors>
 
     <servers>
+      <server>
+        <id>nexus-site</id>
+        <username>admin</username>
+        <password>admin123</password>
+      </server>
    		<server>
        		<id>nexus-snapshots</id>
        		<username>admin</username>

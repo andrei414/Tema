@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	options {
-		buildDiscarder(logRotator(numToKeepStr: '2', artifactNumToKeepStr: '2'))
+		buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
 	}
 
 
@@ -22,12 +22,6 @@ pipeline {
         		sh script: 'git config --global user.name "andrei414"'
         		sh script: 'git config --global user.email "andreiirimiagg@gmail.com"'
         	}	
-    	}
-
-    	stage('Delete tags') {
-    		steps{
-        		sh script: 'git tag | xargs git tag -d'
-    		}
     	}
 		stage('Release') {
 			steps{

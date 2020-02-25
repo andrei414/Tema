@@ -3,7 +3,7 @@
     <parent>
         <artifactId>webDemo</artifactId>
         <groupId>webDemo</groupId>
-        <version>1.0.8-SNAPSHOT</version>
+        <version>1.0.8</version>
 
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -11,7 +11,7 @@
 
     <artifactId>web</artifactId>
     <groupId>web</groupId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.8</version>
 
 
     <properties>
@@ -24,7 +24,7 @@
         <dependency>
             <artifactId>api</artifactId>
             <groupId>api</groupId>
-            <version>1.0.8-SNAPSHOT</version>
+            <version>1.0.8</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

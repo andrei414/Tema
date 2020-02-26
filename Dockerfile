@@ -1,5 +1,5 @@
 FROM openjdk:12-alpine
 
-COPY web/target/web-*.war /web.war
+COPY web/target/example-*.war /example.war
 
-
+CMD["java","jar","/example.war"]

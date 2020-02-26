@@ -26,11 +26,11 @@ pipeline {
         		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare'
     		}
     	}
-    	stage('upload to nexus') {
+    	/*stage('upload to nexus') {
     		steps{
     			sh script: 'mvn clean -s settings.xml deploy -Dmaven.test.skip=true'
     		}
-    	}
+    	}*/
     	stage ('Starting Sonar') {
 			steps{
 		    	build job: 'SonarTestEnv'

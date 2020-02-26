@@ -37,6 +37,16 @@ pipeline {
 			steps{
 		    	build job: 'SonarTestEnv'
 			}
+		}
+		stage ('Docker build image'){
+			steps{
+				sh 'docker build'
+			}
+		}
+		stage ('Docker build image'){
+			steps{
+				sh 'docker push'
+			}
 		}	
 	}
 }

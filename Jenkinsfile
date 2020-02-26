@@ -49,8 +49,13 @@ pipeline {
 		}
 		stage ('Docker push'){
 			steps{
-				sh 'docker push'
+				sh 'docker push andrei414/webdemo:1.0.0-SNAPSHOT'
 			}
-		}	
+		}
+		stage ('clean ws'){
+			steps{
+				cleanWs()
+			}
+		}
 	}
 }

@@ -28,7 +28,7 @@ pipeline {
     	}
     	stage('upload to nexus') {
     		steps{
-    			sh script: 'mvn clean -s settings.xml deploy -Dmaven.test.skip=true'
+    			sh script: 'mvn clean -s settings.xml deploy -U -Dmaven.test.skip=true'
     		}
     	}
     	stage ('Starting Sonar') {

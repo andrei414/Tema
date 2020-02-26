@@ -1,7 +1,7 @@
 pipeline {
 	environment {
     registry = "andrei414/Tema"
-    registryCredential = ‘dockerhub’
+    registryCredential = 'dockerhub'
 	}
 	agent any
 	options {

@@ -1,4 +1,8 @@
 pipeline {
+	environment {
+    registry = "andrei414/Tema"
+    registryCredential = ‘dockerhub’
+	}
 	agent any
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))

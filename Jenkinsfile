@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-    registry = "andrei414/Tema"
+    registry = "andrei414/webdemo"
     registryCredential = 'dockerhub'
 	}
 	agent any
@@ -37,11 +37,11 @@ pipeline {
     			sh script: 'mvn clean -s settings.xml deploy -Dmaven.test.skip=true'
     		}
     	}
-    	stage ('Starting Sonar') {
+    	/*stage ('Starting Sonar') {
 			steps{
 		    	build job: 'SonarTestEnv'
 			}
-		}
+		}*/
 		stage ('Docker build image'){
 			steps{
 				sh 'docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'

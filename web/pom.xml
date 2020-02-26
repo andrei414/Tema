@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>orbartal</groupId>
 	<artifactId>example.smallest</artifactId>
-	<version>0.0.10-SNAPSHOT</version>
+	<version>0.0.10</version>
 	<packaging>war</packaging>
 
 	<parent>
@@ -43,4 +43,8 @@
 		</dependency> -->
 
 	</dependencies>
+
+  <scm>
+    <tag>webDemo-1.0.58</tag>
+  </scm>
 </project>

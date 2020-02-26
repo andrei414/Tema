@@ -49,6 +49,7 @@ pipeline {
 		}
 		stage ('Docker push'){
 			steps{
+				sh 'docker login -u "andrei414" -p "Test12345" docker.io'
 				sh 'docker push andrei414/webdemo:1.0.0-SNAPSHOT'
 			}
 		}

@@ -43,7 +43,7 @@
     <scm>
         <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
         <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
-        <tag>webDemo-1.0.13</tag>
+        <tag>release-branch</tag>
         <url>git@github.com:andrei414/Tema.git</url>
     </scm>
     <modules>

@@ -49,6 +49,7 @@
     <modules>
         <module>api</module>
         <module>web</module>
+        <module>jva</module>
     </modules>
     <build>
         <plugins>

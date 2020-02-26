@@ -44,12 +44,12 @@ pipeline {
 		}*/
 		stage ('Docker build image'){
 			steps{
-				sh 'docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'
+				sh 'sudo docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'
 			}
 		}
 		stage ('Docker push'){
 			steps{
-				sh 'docker push'
+				sh 'sudo docker push'
 			}
 		}	
 	}

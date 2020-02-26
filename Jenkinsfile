@@ -38,6 +38,7 @@ pipeline {
 		}
 		stage ('Docker build image'){
 			steps{
+				sh 'mvn clean install'
 				sh 'docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'
 				sh 'docker run -d -p 8080:8080 andrei414/webdemo:1.0.0-SNAPSHOT'
 			}

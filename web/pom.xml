@@ -3,7 +3,7 @@
     <parent>
         <artifactId>webDemo</artifactId>
         <groupId>webDemo</groupId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
 
 
     </parent>
@@ -12,7 +12,7 @@
 
     <artifactId>web</artifactId>
     <groupId>web</groupId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,7 +24,7 @@
         <dependency>
             <artifactId>api</artifactId>
             <groupId>api</groupId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0.1</version>
 
         </dependency>
         <dependency>

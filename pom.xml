@@ -8,7 +8,7 @@
 
     <groupId>webDemo</groupId>
     <artifactId>webDemo</artifactId>
-    <version>1.0.14-SNAPSHOT</version>
+    <version>1.0.13-SNAPSHOT</version>
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
@@ -42,7 +42,7 @@
     <scm>
         <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
         <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
-        <tag>webDemo-1.0</tag>
+        <tag>release-branch</tag>
         <url>git@github.com:andrei414/Tema.git</url>
     </scm>
     <modules>

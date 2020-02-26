@@ -37,11 +37,11 @@ pipeline {
     			sh script: 'mvn clean -s settings.xml deploy -Dmaven.test.skip=true'
     		}
     	}
-    	/*stage ('Starting Sonar') {
+    	stage ('Starting Sonar') {
 			steps{
 		    	build job: 'SonarTestEnv'
 			}
-		}*/
+		}
 		stage ('Docker build image'){
 			steps{
 				sh 'docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'
@@ -51,11 +51,6 @@ pipeline {
 			steps{
 				sh 'docker login -u "andrei414" -p "Test12345" docker.io'
 				sh 'docker push andrei414/webdemo:1.0.0-SNAPSHOT'
-			}
-		}
-		stage ('clean ws'){
-			steps{
-				cleanWs()
 			}
 		}
 	}

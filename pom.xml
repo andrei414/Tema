@@ -41,10 +41,10 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git@github.com:andrei414/TemaDevOps.git</connection>
-        <developerConnection>scm:git:git@github.com:andrei414/TemaDevOps.git</developerConnection>
+        <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
+        <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
         <tag>release-branch</tag>
-        <url>git@github.com:andrei414/TemaDevOps.git</url>
+        <url>git@github.com:andrei414/Tema.git</url>
     </scm>
     <modules>
         <module>api</module>

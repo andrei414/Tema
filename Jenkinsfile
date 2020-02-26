@@ -15,12 +15,6 @@ pipeline {
 				sh "mvn clean verify"
 			}
 		}
-
-		stage('test'){
-			steps{
-				sh script: "JENKINS_NODE_COOKIE=dontKillMe && sh run.sh"
-		  	}
-		}
 		stage('Git config') {
 			steps{
         		sh script: 'git config --global user.name "andrei414"'
@@ -45,6 +39,7 @@ pipeline {
 		stage ('Docker build image'){
 			steps{
 				sh 'docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'
+				sh 'docker run -d -p 8080:8080 andrei414/webdemo:1.0.0-SNAPSHOT'
 			}
 		}
 		stage ('Docker push'){

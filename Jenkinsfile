@@ -43,7 +43,7 @@ pipeline {
 				sh 'docker build'
 			}
 		}
-		stage ('Docker build image'){
+		stage ('Docker push'){
 			steps{
 				sh 'docker push'
 			}

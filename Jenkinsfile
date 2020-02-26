@@ -40,7 +40,7 @@ pipeline {
 		}
 		stage ('Docker build image'){
 			steps{
-				sh 'docker build'
+				sh 'docker build -t andrei414/webdemo:1.0.0-SNAPSHOT .'
 			}
 		}
 		stage ('Docker push'){

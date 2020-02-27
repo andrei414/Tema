@@ -3,6 +3,10 @@
  <username>admin</username>
  <password>admin123</password>
 </server>
+<anotherfeature>
+	test
+	test
+</anotherfeature>
 <server>
  <id>nexus</id>
  <username>admin</username>

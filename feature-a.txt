@@ -1,0 +1,14 @@
+<server>
+ <id>nexus</id>
+ <username>admin</username>
+ <password>admin123</password>
+</server>
+<added-feature>
+	test feature
+	test feature
+</added-feature>
+<server>
+ <id>nexus</id>
+ <username>admin</username>
+ <password>admin123</password>
+</server>

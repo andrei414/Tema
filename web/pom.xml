@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>orbartal</groupId>
 	<artifactId>example.smallest</artifactId>
-	<version>1.0.66-SNAPSHOT</version>
+	<version>1.0.67-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<parent>

@@ -23,7 +23,7 @@ pipeline {
     	}
 		stage('Release') {
 			steps{
-        		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare release:branch -DbranchName=my-branchTest'
+        		sh script: 'mvn clean -s  settings.xml --batch-mode release:clean release:prepare release:perform'
     		}
     	}
     	stage('upload to nexus') {

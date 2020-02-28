@@ -3,7 +3,7 @@
     <parent>
         <artifactId>webDemo</artifactId>
         <groupId>webDemo</groupId>
-        <version>1.0.71-SNAPSHOT</version>
+        <version>1.0.72-SNAPSHOT</version>
 
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -11,7 +11,7 @@
 
     <artifactId>api</artifactId>
     <groupId>api</groupId>
-    <version>1.0.71-SNAPSHOT</version>
+    <version>1.0.72-SNAPSHOT</version>
 
 
 
@@ -30,8 +30,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.easymock</groupId>
             <artifactId>easymock</artifactId>

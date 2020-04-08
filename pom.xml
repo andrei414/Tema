@@ -8,7 +8,7 @@
 
     <groupId>webDemo</groupId>
     <artifactId>webDemo</artifactId>
-    <version>1.0.90-SNAPSHOT</version>
+    <version>1.0.90</version>
 
 
     <modelVersion>4.0.0</modelVersion>
@@ -43,7 +43,7 @@
     <scm>
         <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
         <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
-        <tag>webDemo</tag>
+        <tag>webDemo-1.0.90</tag>
         <url>git@github.com:andrei414/Tema.git</url>
     </scm>
     <modules>

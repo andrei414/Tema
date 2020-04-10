@@ -1,1 +1,1 @@
-1.0.90-SNAPSHOT
+test1 test2

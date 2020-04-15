@@ -292,11 +292,10 @@ index 74ae9ab..3013a97 100644
 +completedPhase=end-release
 +project.dev.orbartal\:example.smallest=1.0.80-SNAPSHOT
 diff --git a/test1.sh b/test1.sh
-deleted file mode 100755
-index 0ea769a..0000000
+index 0ea769a..3fc2a13 100755
 --- a/test1.sh
-+++ /dev/null
-@@ -1,7 +0,0 @@
++++ b/test1.sh
+@@ -1,7 +1 @@
 -mvn clean --batch-mode release:clean release:prepare -q
 -MVN_VERSION=$(mvn -q \
 -    -Dexec.executable=echo \
@@ -304,6 +303,265 @@ index 0ea769a..0000000
 -    --non-recursive \
 -    exec:exec)
 -echo $MVN_VERSION
+\ No newline at end of file
++git diff $(git tag --sort version:refname | tail -n 1 | head -n 1) $(git branch master) >| test1.txt
+diff --git a/test1.txt b/test1.txt
+new file mode 100644
+index 0000000..195706a
+--- /dev/null
++++ b/test1.txt
+@@ -0,0 +1,251 @@
++diff --git a/api/pom.xml b/api/pom.xml
++index 430ee42..b063497 100644
++--- a/api/pom.xml
+++++ b/api/pom.xml
++@@ -3,7 +3,7 @@
++     <parent>
++         <artifactId>webDemo</artifactId>
++         <groupId>webDemo</groupId>
++-        <version>1.0.90</version>
+++        <version>1.0.84-SNAPSHOT</version>
++ 
++     </parent>
++     <modelVersion>4.0.0</modelVersion>
++@@ -11,7 +11,7 @@
++ 
++     <artifactId>api</artifactId>
++     <groupId>api</groupId>
++-    <version>1.0.90</version>
+++    <version>1.0.84-SNAPSHOT</version>
++ 
++ 
++ 
++diff --git a/api/pom.xml.releaseBackup b/api/pom.xml.releaseBackup
++new file mode 100644
++index 0000000..db8165b
++--- /dev/null
+++++ b/api/pom.xml.releaseBackup
++@@ -0,0 +1,67 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+++    <parent>
+++        <artifactId>webDemo</artifactId>
+++        <groupId>webDemo</groupId>
+++        <version>1.0.79-SNAPSHOT</version>
+++
+++    </parent>
+++    <modelVersion>4.0.0</modelVersion>
+++    <packaging>jar</packaging>
+++
+++    <artifactId>api</artifactId>
+++    <groupId>api</groupId>
+++    <version>1.0.79-SNAPSHOT</version>
+++
+++
+++
+++    <dependencies>
+++
+++        <dependency>
+++            <groupId>org.springframework.boot</groupId>
+++            <artifactId>spring-boot-starter-web</artifactId>
+++        </dependency>
+++        <dependency>
+++            <groupId>org.apache.tomcat.embed</groupId>
+++            <artifactId>tomcat-embed-jasper</artifactId>
+++            <scope>provided</scope>
+++        </dependency>
+++        <dependency>
+++            <groupId>org.springframework.boot</groupId>
+++            <artifactId>spring-boot-starter-data-jpa</artifactId>
+++        </dependency>
+++        <dependency>
+++            <groupId>org.hsqldb</groupId>
+++            <artifactId>hsqldb</artifactId>
+++            <version>2.3.3</version>
+++        </dependency>
+++        <dependency>
+++            <groupId>junit</groupId>
+++            <artifactId>junit</artifactId>
+++            <version>4.12</version>
+++            <scope>test</scope>
+++        </dependency>
+++        <dependency>
+++            <groupId>org.easymock</groupId>
+++            <artifactId>easymock</artifactId>
+++            <version>3.4</version>
+++            <scope>test</scope>
+++        </dependency>
+++        <dependency>
+++            <groupId>org.springframework.boot</groupId>
+++            <artifactId>spring-boot-starter-test</artifactId>
+++            <scope>test</scope>
+++        </dependency>
+++    </dependencies>
+++    <build>
+++        <plugins>
+++            <plugin>
+++                <groupId>org.springframework.boot</groupId>
+++                <artifactId>spring-boot-maven-plugin</artifactId>
+++                <configuration>
+++                    <mainClass>com.apiDemo.ApiApplication</mainClass>
+++                </configuration>
+++            </plugin>
+++        </plugins>
+++    </build>
+++</project>
++\ No newline at end of file
++diff --git a/finalversion.txt b/finalversion.txt
++deleted file mode 100644
++index d5bcf5f..0000000
++--- a/finalversion.txt
+++++ /dev/null
++@@ -1 +0,0 @@
++-1.0.90-SNAPSHOT
++diff --git a/mvnversion.txt b/mvnversion.txt
++deleted file mode 100644
++index a9c1752..0000000
++--- a/mvnversion.txt
+++++ /dev/null
++@@ -1 +0,0 @@
++-1.0.80-SNAPSHOT
++diff --git a/outputfile.txt b/outputfile.txt
++deleted file mode 100644
++index 9519cf5..0000000
++--- a/outputfile.txt
+++++ /dev/null
++@@ -1,2 +0,0 @@
++-stele
++-verzi
++diff --git a/pom.xml b/pom.xml
++index 8feccad..a770908 100644
++--- a/pom.xml
+++++ b/pom.xml
++@@ -8,7 +8,7 @@
++ 
++     <groupId>webDemo</groupId>
++     <artifactId>webDemo</artifactId>
++-    <version>1.0.90</version>
+++    <version>1.0.84-SNAPSHOT</version>
++ 
++ 
++     <modelVersion>4.0.0</modelVersion>
++@@ -43,7 +43,7 @@
++     <scm>
++         <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
++         <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
++-        <tag>webDemo-1.0.90</tag>
+++        <tag>webDemo</tag>
++         <url>git@github.com:andrei414/Tema.git</url>
++     </scm>
++     <modules>
++diff --git a/pom.xml.releaseBackup b/pom.xml.releaseBackup
++new file mode 100644
++index 0000000..2425032
++--- /dev/null
+++++ b/pom.xml.releaseBackup
++@@ -0,0 +1,112 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+++    <parent>
+++        <groupId>org.springframework.boot</groupId>
+++        <artifactId>spring-boot-starter-parent</artifactId>
+++        <version>1.2.4.RELEASE</version>
+++    </parent>
+++
+++    <groupId>webDemo</groupId>
+++    <artifactId>webDemo</artifactId>
+++    <version>1.0.79-SNAPSHOT</version>
+++
+++
+++    <modelVersion>4.0.0</modelVersion>
+++    <packaging>pom</packaging>
+++    <properties>
+++        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+++        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+++        <java.version>1.8</java.version>
+++    </properties>
+++
+++    <repositories>
+++        <repository>
+++            <id>nexus-public</id>
+++            <url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+++        </repository>
+++    </repositories>
+++
+++    <distributionManagement>
+++        
+++        <snapshotRepository>
+++            <id>nexus-snapshots</id>
+++            <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+++        </snapshotRepository>
+++
+++        <repository>
+++            <id>nexus-releases</id>
+++            <url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
+++        </repository>
+++
+++    </distributionManagement>
+++
+++    <scm>
+++        <connection>scm:git:git@github.com:andrei414/Tema.git</connection>
+++        <developerConnection>scm:git:git@github.com:andrei414/Tema.git</developerConnection>
+++        <tag>webDemo</tag>
+++        <url>git@github.com:andrei414/Tema.git</url>
+++    </scm>
+++    <modules>
+++        <module>api</module>
+++        <module>web</module>
+++    </modules>
+++    <build>
+++        <plugins>
+++          
+++            <plugin>
+++              <artifactId>maven-release-plugin</artifactId>
+++              <version>2.5</version>
+++              <configuration>
+++                  <releaseProfiles>release</releaseProfiles>
+++                  <goals>deploy</goals>
+++                  <!--
+++                  <autoVersionSubmodules>true</autoVersionSubmodules>
+++                  -->
+++              </configuration>
+++            </plugin>
+++           
+++            <plugin>
+++                <groupId>org.apache.maven.plugins</groupId>
+++                <artifactId>maven-deploy-plugin</artifactId>
+++                <version>2.7</version>
+++            </plugin>
+++
+++            <plugin>
+++              <groupId>org.openclover</groupId>
+++              <artifactId>clover-maven-plugin</artifactId>
+++              <version>4.2.0</version>
+++              <executions>
+++                 <execution>
+++                     <phase>verify</phase>
+++                     <goals>
+++                         <goal>instrument</goal>
+++                     </goals>
+++                 </execution>
+++              </executions>
+++            </plugin>
+++
+++            <plugin>
+++                <groupId>org.apache.maven.plugins</groupId>
+++                <artifactId>maven-release-plugin</artifactId>
+++                <version>2.5.3</version>
+++                <configuration>
+++                    <checkModificationExclude>pom.xml</checkModificationExclude>
+++                    <checkModificationExclude>buildNumber.properties</checkModificationExclude>
+++                </configuration>
+++            </plugin>
+++            <plugin>
+++               <groupId>org.apache.maven.plugins</groupId>
+++               <artifactId>maven-release-plugin</artifactId>
+++               <version>2.5.3</version>
+++               <configuration>
+++                  <checkModificationExcludes>
+++                     <checkModificationExclude>dependency-reduced-pom.xml</checkModificationExclude>
+++                  </checkModificationExcludes>
+++   
 \ No newline at end of file
 diff --git a/test2.sh b/test2.sh
 deleted file mode 100755
